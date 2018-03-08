@@ -656,17 +656,7 @@ zhaoliangliang
 82825287@qq.com
 daydayup
 ```
-```
-gongjijinzhanghao
-xuanfeng27
-892657zll27
 
-app store
-82825287@qq.com
-web_developer_zll@163.com
-DayDayUp27
-zhaoliangliang
-```
 ```
 http-server
 
