@@ -1,6 +1,6 @@
 ### stopPropagation
 
-
+```
 function getEvent(event) {
     event = event || window.event;
         
@@ -10,8 +10,8 @@ function getEvent(event) {
         event.cancelBubble = true;
     }
 }
-
-
+```
+```
 function goFn(event) {
     event = event || window.event;
     
@@ -23,3 +23,33 @@ function goFn(event) {
     
     console.log('我没有跳转！');
 }
+```
+```
+在IE8及之前版本，我们需要使用srcElement而非target。兼容方案如下：
+
+function goFn(event) {
+    var event = event || window.event,    
+        target = event.target || event.srcElement;
+    
+    console.log(target === go) // 返回true
+}
+```
+```
+function clickFn(event) {
+    console.log(event.button) // 获取鼠标按下的键。非IE浏览器中0为鼠标左键，1为鼠标中键，2为鼠标右键
+    console.log(event.which) // 获取指定事件上哪个键盘键或鼠标按钮被按下
+}
+document.addEventListener('click', clickFn, false);
+```
+```
+键盘事件
+function keyFn(event) {
+    console.log(event.keyCode); // 获取按下键的键码值
+    console.log(event.ctrlKey); // 获取是否按下了ctrl键
+    console.log(event.shiftKey); // 获取是否按下了shift键
+    console.log(event.altKey); // 获取是否按下了alt键
+    console.log(event.metaKey); // 获取是否按下了meta键
+}
+
+document.addEventListener('keyup', keyFn, false);
+```
