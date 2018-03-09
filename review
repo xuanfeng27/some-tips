@@ -1,0 +1,23 @@
+```
+["1", "2", "3"].map(parseInt)  //[1, NaN, NaN]
+var a=["1", "2", "3", "4", "5",  6,   7,   8,   9,  10,11,12,13,14,15]; 
+a.map(function(value,index,arr){ return parseInt(value,index)});
+//[1, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, 9, 11, 13, 15, 17, 19]
+```
+```
+var val = 'smtg';
+console.log('Value is ' + (val === 'smtg') ? 'Something' : 'Nothing');
+解答：这题考的javascript中的运算符优先级，这里'+'运算符的优先级要高于'?'所以运算符，实际上是 'Value is true'?'Something' : 'Nothing'，当字符串不为空时，转换为bool为true，所以结果为'Something'
+```
+```
+var a = [0];
+if ([0]) { 
+  console.log(a == true);
+} else { 
+  console.log("wut");
+}
+
+a本身是一个长度为1的数组，而当数组不为空时，其转换成bool值为true。
+
+而==左右的转换，会使用如果一个操作值为布尔值，则在比较之前先将其转换为数值的规则来转换，Number([0])，也就是0，于是变成了0 == true，结果是false
+```
