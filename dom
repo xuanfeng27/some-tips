@@ -1,6 +1,6 @@
 ### stopPropagation
 
-```
+
 function getEvent(event) {
     event = event || window.event;
         
@@ -10,4 +10,16 @@ function getEvent(event) {
         event.cancelBubble = true;
     }
 }
-```
+
+
+function goFn(event) {
+    event = event || window.event;
+    
+    if (event.preventDefault) {
+        event.preventDefault();
+    } else {
+        event.returnValue = false;
+    }
+    
+    console.log('我没有跳转！');
+}
