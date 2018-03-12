@@ -6,3 +6,14 @@ function parSort(par) {
         return arr1.age > arr2.age ? -1 : 1;
     });
 }
+
+2、有字符串 var = 'abc345efgabcab'，请写出 3 条 JS 语句分别实现如下 3 个功能：
+1）去掉字符串中的a、b、c 字符，形成结果：'345efg'
+2）将字符串中的数字用中括号括起来，形成结果：'abc3[5]efgabcab'
+3）将字符串中的每个数字的值分别乘以 2，形成结果：'abc6810efgabcab'
+str.replace(/([a-c])/g, '');
+str.replace(/(\d)/g, '[$1]');
+str.replace(/(\d)/g, function(num) {return num*2;});
+匹配一个全部是数字的字符串  /^\d+$/.test(str);
+
+
