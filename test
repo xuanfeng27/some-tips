@@ -17,3 +17,13 @@ str.replace(/(\d)/g, function(num) {return num*2;});
 匹配一个全部是数字的字符串  /^\d+$/.test(str);
 
 
+function Person() {
+
+}
+
+var person = new Person();
+
+console.log(person.__proto__ == Person.prototype) // true
+console.log(Person.prototype.constructor == Person) // true
+// 顺便学习一个ES5的方法,可以获得对象的原型
+console.log(Object.getPrototypeOf(person) === Person.prototype) // true
