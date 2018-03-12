@@ -30,8 +30,14 @@ console.log(Object.getPrototypeOf(person) === Person.prototype) // true
 
                      
 |-Person (构造函数) ----prototype-----> Person.prototype(实例原型)-|
-|       ^\^                                 |      |
-|        |<-------constructor --------------|      |
-|                                                  |
-|                                                  |
-|---person(实例)-------------__proto__------------->|
+|       ^\^                                 |      |      |
+|        |<-------constructor --------------|      |      |
+|                                                  |      |
+|                                                  |      |
+|---person(实例)-------------__proto__------------->|      |__proto__
+                                                          |
+                                                          |
+Object()-------prototype-------> Object.prototype <-------|
+     ^                                  |
+     ^<--------constructor--------------|                                                      
+                                                          
