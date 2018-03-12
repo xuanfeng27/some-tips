@@ -1,0 +1,8 @@
+1、一个数组 par 中存放有多个人员的信息，如{age: 2, name: 'xx'}。
+请写一段 JS 程序，对这个数组按年龄从小到大进行排序。
+
+function parSort(par) {
+    return par.sort(function(arr1, arr2) {
+        return arr1.age > arr2.age ? -1 : 1;
+    });
+}
