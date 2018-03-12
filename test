@@ -30,7 +30,7 @@ console.log(Object.getPrototypeOf(person) === Person.prototype) // true
 
                      
 |-Person (构造函数) ----prototype-----> Person.prototype(实例原型)-|
-|       ^\^                                 |      |      |
+|        ⬆︎                                 |      |      |
 |        |<-------constructor --------------|      |      |
 |                                                  |      |
 |                                                  |      |
@@ -38,6 +38,8 @@ console.log(Object.getPrototypeOf(person) === Person.prototype) // true
                                                           |
                                                           |
 Object()-------prototype-------> Object.prototype <-------|
-     ^                                  |
-     ^<--------constructor--------------|                                                      
-                                                          
+     ⬆︎                                 |  |
+     ^<--------constructor--------------|  |__proto__
+                                           |
+                                           ⬇︎
+                                          null               
