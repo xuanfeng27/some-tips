@@ -27,3 +27,11 @@ console.log(person.__proto__ == Person.prototype) // true
 console.log(Person.prototype.constructor == Person) // true
 // 顺便学习一个ES5的方法,可以获得对象的原型
 console.log(Object.getPrototypeOf(person) === Person.prototype) // true
+
+                     
+|-Person (构造函数) ----prototype-----> Person.prototype(实例原型)-|
+|       ^\^                                 |      |
+|        |<-------constructor --------------|      |
+|                                                  |
+|                                                  |
+|---person(实例)-------------__proto__------------->|
