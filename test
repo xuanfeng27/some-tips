@@ -11,6 +11,16 @@ Array.from(arrayLike); // ["name", "age", "sex"]
 // 4. apply
 Array.prototype.concat.apply([], arrayLike)
 
+
+Arguments对象的length属性，表示实参的长度，举个例子：
+function foo(b, c, d){
+    console.log("实参的长度为：" + arguments.length)
+}
+console.log("形参的长度为：" + foo.length)
+foo(1)
+// 形参的长度为：3
+// 实参的长度为：1
+
 `````
 
 `````````
