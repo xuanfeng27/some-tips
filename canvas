@@ -1,0 +1,62 @@
+<canvas id="mycanvas" width="300" height="300"></canvas>
+
+var canvas=document.getElementById("mycanvas");
+if (canvas.getContext){
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle="red";
+    ctx.fillRect(0,0,100,100);
+}
+//上面的两行代码绘制一个红色的矩形：
+//fillRect(x,y,width,height)方法定义了矩形当前的填充方式，x与y指定了在canvas画布上所绘制的矩形的左上角（相对于原点）的坐标。width和height设置矩形的尺寸
+
+strokeStyle	用于设置画笔绘制路径的颜色、渐变和模式
+lineWidth	定义绘制线条的宽度
+beginPath()	开始一个新的绘制路径
+moveTo(x,y)	移动画笔到指定的坐标点(x,y)，该点就是新的子路径的起始点
+lineTo(x,y)	使用直线边接当前端点和指定的坐标点(x,y)
+stroke()	沿着绘制路径的坐标点顺序绘制直线
+closePath()	如果当前的绘制路径是打开的，则关闭掉该绘制路径
+这里需要注意的是，当你调用fill()函数时，所有没有闭合的形状都会自动闭合，所以你不需要调用closePath()函数。但是调用stroke()时不会自动闭合。
+
+//绘制了一个三角形：
+ var canvas = document.getElementById('canvas');
+     if (canvas.getContext){
+        var ctx = canvas.getContext('2d');
+        ctx.beginPath();
+        ctx.moveTo(75,50);
+        ctx.lineTo(100,75);
+        ctx.lineTo(100,25);
+        ctx.fill();
+    }
+    
+canvas 圆弧我们可以使用arc()方法。
+该方法有六个参数：x,y为绘制圆弧所在圆上的圆心坐标。radius为半径。
+startAngle以及endAngle参数用弧度定义了开始以及结束的弧度。这些都是以x轴为基准。
+参数anticlockwise为一个布尔值。为true时，是逆时针方向，否则顺时针方向。
+var canvas=document.getElementById("mycanvas");
+var ctx=canvas.getContext("2d");
+ctx.beginPath();
+ctx.arc(95,50,40,0,2*Math.PI);
+ctx.stroke();
+
+
+canvas 提供了两种方法来渲染文本：
+fillText(text, x, y [, maxWidth]) 在指定的(x,y)位置填充指定的文本，绘制的最大宽度是可选的。
+strokeText(text, x, y [, maxWidth]) 在指定的(x,y)位置绘制文本边框，绘制的最大宽度是可选的。
+文本被填充方式：
+var canvas=document.getElementById("mycanvas");
+var ctx=canvas.getContext("2d");
+ctx.font="30px Arial";
+ctx.fillText("Hello World",10,50);
+
+
+canvas 图像
+引入图像到canvas里需要以下两步基本操作：
+获取一个指向HTMLImageElement的对象或者另一个canvas元素的引用作为源，也可以通过提供一个URL的方式来使用图片。
+使用drawImage()函数将图片绘制到画布上。
+获取图片和绘制图片，下面只展示最简单的一种：
+var canvas=document.getElementById("mycanvas");
+var ctx=canvas.getContext("2d");
+var img=document.getElementById("img");
+ctx.drawImage(img,10,10);
+drawImage有三个参数：drawImage(image, x, y)。其中image是image或者 canvas对象，x和y是其在目标canvas里的起始坐标。
